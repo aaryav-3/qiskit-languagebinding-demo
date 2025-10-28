@@ -56,7 +56,7 @@ To build this project, the following dependencies are required:
 - Rust (latest stable recommended)
 - C compiler with C++17 support
 - CMake and Make (available as RPM packages on RHEL-compatible OS)
-- Python ≥ 3.11
+- Python ≥ 3.11 (including development header files)
 
 
 ## Required Libraries
