@@ -38,7 +38,6 @@ This demo computes the ground state energy of the Fe₄S₄ cluster using:
                  ├─► qiskit-cpp (C++ Wrapper Library)
                  │   └─► Qiskit C API (qiskit/crates/cext)
                  │       └─► Qiskit Rust Core
-                 │           └─► Python Qiskit (via PyO3)
                  │
                  ├─► QRMI (Quantum Resource Management)
                  │   └─► IBM Quantum Backend
@@ -73,11 +72,9 @@ The Qiskit C API enables multiple language ecosystems through a layered architec
                  ├─► Language-Specific Wrapper (Recommended)
                  │   └─► C++: qiskit-cpp (qiskit-c-api-demo/deps/qiskit-cpp)
                  │   └─► Julia: Qiskit.jl (Qiskit.jl/src/Qiskit.jl)
-                 │   └─► Python: ctypes/cffi
                  │
                  ├─► C API Layer (qiskit/crates/cext)
                  │   └─► Rust Core (qiskit/crates/*)
-                 │       └─► Python Qiskit (via PyO3)
                  │
                  └─► Direct C API Usage
                      └─► Functions like qk_circuit_new(), qk_circuit_gate()
