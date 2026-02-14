@@ -1,5 +1,4 @@
 # Qiskit C API Demo: Language Bindings Presentation
-**Duration: 15-20 minutes**
 
 > **IMPORTANT NOTE**: This demo uses the **[qiskit-cpp](./deps/qiskit-cpp)** C++ wrapper library, which provides an object-oriented interface on top of the lower-level C API. The C++ wrapper is more ergonomic for application development, while the raw C API (located in [`qiskit/crates/cext`](qiskit/crates/cext)) is available for maximum control and direct use from C or other languages.
 
@@ -94,7 +93,7 @@ The Qiskit C API enables multiple language ecosystems through a layered architec
 
 ---
 
-## 4. Code Walkthrough: Circuit Construction (4 min)
+## 4. Code Walkthrough: Circuit Construction
 
 ### Step 1: Include Qiskit C++ Headers
 
@@ -251,7 +250,7 @@ counts = {
 
 ---
 
-## 6. Code Walkthrough: Classical Post-Processing (3 min)
+## 6. Code Walkthrough: Classical Post-Processing
 
 ### Step 8: Configuration Recovery
 
@@ -305,7 +304,7 @@ for (size_t j = 0; j < latest_occupancies[0].size(); ++j) {
 
 ---
 
-## 7. Running the Demo (2 min)
+## 7. Running the Demo
 
 ### Test Mode (No Quantum Hardware)
 
@@ -357,7 +356,7 @@ mpirun -np 96 ./c-api-demo \
 
 ---
 
-## 8. Key Takeaways (2 min)
+## 8. Key Takeaways
 
 ### Why Use the C API?
 
@@ -420,12 +419,6 @@ make
 ./c-api-demo --fcidump ../data/fcidump_Fe4S4_MO.txt -v
 ```
 
-### Contact
-
-- **GitHub Issues**: Report bugs or request features
-- **Qiskit Slack**: #c-api channel
-- **Email**: qiskit@qiskit.org
-
 ---
 
 ## Appendix: Complete Code Flow
@@ -461,10 +454,6 @@ auto [energy, new_occupancies] = sbd_main(MPI_COMM_WORLD, diag_data);
 // 7. Finalize
 MPI_Finalize();
 ```
-
-**Total Lines of Code**: ~437 lines (including comments)  
-**Compilation Time**: ~30 seconds  
-**Runtime**: 1-10 minutes (depending on backend queue)
 
 ---
 

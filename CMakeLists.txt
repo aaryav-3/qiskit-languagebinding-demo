@@ -96,8 +96,6 @@ target_link_libraries(sbd INTERFACE MPI::MPI_C)
 
 add_executable(c-api-demo src/main.cpp)
 
-# Bell circuit demo executable
-add_executable(bell_circuit_demo bell_circuit_demo.cpp)
 
 if (MSVC)
     target_link_directories(c-api-demo
@@ -156,55 +154,6 @@ else()
         -lopenblas
     )
 endif()
-
-# Configure bell_circuit_demo target
-if (MSVC)
-    target_link_directories(bell_circuit_demo
-        PUBLIC
-            ${QISKIT_ROOT}/target/release
-            ${QRMI_ROOT}/target/release
-    )
-    target_link_libraries(bell_circuit_demo
-        OpenMP::OpenMP_CXX
-        nlohmann_json::nlohmann_json
-        qiskit_cext.dll.lib
-        qrmi.dll.lib
-    )
-elseif(APPLE)
-    target_link_directories(bell_circuit_demo
-      PUBLIC
-        ${QISKIT_ROOT}/dist/c/lib
-        ${QRMI_ROOT}/target/release
-    )
-    target_link_libraries(bell_circuit_demo
-        qiskit
-        qrmi
-        OpenMP::OpenMP_CXX
-        nlohmann_json::nlohmann_json
-        ${ACCELERATE_LIBRARY}
-    )
-    set_target_properties(bell_circuit_demo PROPERTIES
-        BUILD_RPATH "${QISKIT_ROOT}/dist/c/lib;${QISKIT_ROOT}/target/release/deps;${QRMI_ROOT}/target/release"
-        INSTALL_RPATH "${QISKIT_ROOT}/dist/c/lib;${QISKIT_ROOT}/target/release/deps;${QRMI_ROOT}/target/release"
-    )
-else()
-    target_link_libraries(bell_circuit_demo
-      PUBLIC
-        "-L${QISKIT_ROOT}/dist/c/lib -L${QRMI_ROOT}/target/release -Wl,-rpath ${QISKIT_ROOT}/dist/c/lib -Wl,-rpath ${QRMI_ROOT}/target/release"
-        qiskit
-        qrmi
-        OpenMP::OpenMP_CXX
-        nlohmann_json::nlohmann_json
-    )
-endif()
-
-target_include_directories(bell_circuit_demo
-    PRIVATE
-        ${QISKIT_ROOT}/dist/c/include
-        ${QRMI_ROOT}
-        ${QISKIT_CPP_ROOT}/src
-)
-target_compile_options(bell_circuit_demo PRIVATE "-DQRMI_ROOT=${QRMI_ROOT}")
 
 target_include_directories(c-api-demo
     PRIVATE
