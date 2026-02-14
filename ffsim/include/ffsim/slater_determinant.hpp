@@ -28,6 +28,7 @@ namespace ffsim
 using namespace Eigen;
 using namespace linalg;
 using namespace gates;
+using Eigen::indexing::all;
 using CircuitInstruction = ffsim::CircuitInstruction;
 
 /**
