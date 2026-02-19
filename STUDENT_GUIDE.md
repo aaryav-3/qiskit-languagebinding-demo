@@ -2,7 +2,7 @@
 
 This guide helps you learn quantum computing by writing your own experiments using **Qiskit C++ bindings** with a **fake backend** for local development—no quantum hardware needed!
 
-## 🎯 What You'll Learn
+## What You'll Learn
 
 - Build quantum circuits using **C++ and Qiskit C++ bindings**
 - Understand quantum gates, measurements, and entanglement
@@ -11,7 +11,7 @@ This guide helps you learn quantum computing by writing your own experiments usi
 
 ---
 
-## 🏗️ Architecture: C++ Bindings vs C API
+## Architecture: C++ Bindings vs C API
 
 ```
 Your C++ Code
@@ -29,7 +29,7 @@ Python Qiskit (via PyO3)
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Step 1: One-Time Setup
 
@@ -68,7 +68,7 @@ make
 
 ---
 
-## 📚 Example Experiments
+## Example Experiments
 
 ### Experiment 1: Bell State (Quantum Entanglement)
 
@@ -94,10 +94,10 @@ int main() {
     circ.measure(0, 0);
     circ.measure(1, 1);
     
-    std::cout << "✅ Bell state circuit created!" << std::endl;
+    std::cout << "  Bell state circuit created!" << std::endl;
     std::cout << "   Qubits: " << circ.num_qubits() << std::endl;
     std::cout << "   Gates: H(0), CNOT(0,1)" << std::endl;
-    std::cout << "\n📊 Expected on REAL hardware:" << std::endl;
+    std::cout << "\n Expected on REAL hardware:" << std::endl;
     std::cout << "   ~50% |00⟩ and ~50% |11⟩ (entangled!)" << std::endl;
     std::cout << "   Never |01⟩ or |10⟩" << std::endl;
     
@@ -141,8 +141,8 @@ int main() {
     circ.h(0);
     circ.measure(0, 0);
     
-    std::cout << "✅ Superposition circuit created!" << std::endl;
-    std::cout << "\n📊 Expected on REAL hardware:" << std::endl;
+    std::cout << " Superposition circuit created!" << std::endl;
+    std::cout << "\n Expected on REAL hardware:" << std::endl;
     std::cout << "   ~50% |0⟩ and ~50% |1⟩" << std::endl;
     std::cout << "   This is quantum randomness!" << std::endl;
     
@@ -176,8 +176,8 @@ int main() {
     // Measure all qubits
     circ.measure_all();
     
-    std::cout << "✅ GHZ state circuit created!" << std::endl;
-    std::cout << "\n📊 Expected on REAL hardware:" << std::endl;
+    std::cout << " GHZ state circuit created!" << std::endl;
+    std::cout << "\n Expected on REAL hardware:" << std::endl;
     std::cout << "   ~50% |000⟩ and ~50% |111⟩" << std::endl;
     std::cout << "   All 3 qubits are entangled!" << std::endl;
     
@@ -219,7 +219,7 @@ int main() {
     // Measure
     circ.measure_all();
     
-    std::cout << "✅ Phase estimation circuit created!" << std::endl;
+    std::cout << " Phase estimation circuit created!" << std::endl;
     std::cout << "   Estimating phase: π/4" << std::endl;
     
     return 0;
@@ -228,7 +228,7 @@ int main() {
 
 ---
 
-## 🎓 Available Quantum Gates
+## Available Quantum Gates
 
 ### Single-Qubit Gates
 
@@ -269,7 +269,7 @@ circ.measure_all();                 // Measure all qubits
 
 ---
 
-## 🔧 Complete Student Template
+## Complete Student Template
 
 Create `student-experiments/template.cpp`:
 
@@ -326,7 +326,7 @@ int main() {
 
 ---
 
-## 📦 Student CMakeLists.txt
+## Student CMakeLists.txt
 
 Create `student-experiments/CMakeLists.txt`:
 
@@ -381,7 +381,7 @@ endif()
 
 ---
 
-## 🎯 Development Workflow
+## Development Workflow
 
 ### Makefile for Easy Building
 
@@ -437,7 +437,7 @@ make clean         # Clean up
 
 ---
 
-## 🔄 Fake Backend vs Real Hardware
+## Fake Backend vs Real Hardware
 
 ### How the Fake Backend Works
 
@@ -498,7 +498,7 @@ std::unordered_map<std::string, uint64_t> generate_counts_uniform(
 
 ---
 
-## 🚀 Transitioning to Real Hardware
+## Transitioning to Real Hardware
 
 ### Step 1: Get IBM Quantum Credentials
 
@@ -528,7 +528,7 @@ make
 
 ---
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### Build Fails
 
@@ -566,15 +566,13 @@ echo $QISKIT_IBM_INSTANCE
 
 ---
 
-## 📖 Additional Resources
+## Additional Resources
 
 ### Documentation
 - [Qiskit C++ Bindings](https://github.com/Qiskit/qiskit-cpp)
-- [Qiskit Textbook](https://qiskit.org/textbook/)
 - [IBM Quantum Learning](https://learning.quantum.ibm.com/)
 
 ### Community
-- [Qiskit Slack](https://qiskit.slack.com) - #c-api channel
 - [GitHub Discussions](https://github.com/Qiskit/qiskit/discussions)
 
 ### Example Algorithms
@@ -586,7 +584,7 @@ echo $QISKIT_IBM_INSTANCE
 
 ---
 
-## 🎉 Next Steps
+## Next Steps
 
 1. **Start with fake backend**: Build confidence without costs
 2. **Experiment freely**: Try different gates and circuits
@@ -594,11 +592,9 @@ echo $QISKIT_IBM_INSTANCE
 4. **Graduate to real hardware**: Experience true quantum effects
 5. **Share your work**: Contribute examples to the community
 
-Happy quantum coding! 🚀⚛️
-
 ---
 
-## 📝 Assignment Ideas
+## Assignment Ideas
 
 ### Assignment 1: Quantum Coin Flip
 Build a fair coin flip using Hadamard gate. Verify 50/50 distribution.
